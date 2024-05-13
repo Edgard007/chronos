@@ -1,0 +1,15 @@
+{
+  "app_name": "Scaffold",
+  "app_description": "System created by Edgard007.",
+  "appLogo-alt": "scaffold Logo",
+
+  "options_title": "Options",
+  "lng": "Language",
+  "lng_es": "Spanish",
+  "lng_en": "English",
+  "theme": "Theme",
+  "theme_light": "Light",
+  "theme_dark": "Dark",
+
+  "copyright-label": "©{{year}} - {{app_name}}. All rights reserved."
+}

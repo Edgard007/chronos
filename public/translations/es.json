@@ -1,0 +1,15 @@
+{
+  "app_name": "Andamio",
+  "app_description": "Sistema creado por Edgard007",
+  "appLogo-alt": "Logo de Andamio",
+
+  "options_title": "Opciones",
+  "lng": "Idioma",
+  "lng_es": "Español",
+  "lng_en": "Inglés",
+  "theme": "Tema",
+  "theme_light": "Claro",
+  "theme_dark": "Oscuro",
+
+  "copyright-label": "©{{year}} - {{app_name}}. Todos los derechos reservados."
+}
