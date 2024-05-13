@@ -1,6 +1,6 @@
-# Scaffold
+# Chronos
 
-_Scaffold, created with React + TypeScript + Vite_
+_Chronos, created with React + TypeScript + Vite_
 
 <p align="center">
   <a href="https://reactjs.org" target="_blank">
@@ -88,7 +88,7 @@ A Reducer has been configured using `useContext` and `useReducer` to store langu
 
 ## Installation
 
-Scaffold requires [Node.js](https://nodejs.org/) v20+ to run.
+Chronos requires [Node.js](https://nodejs.org/) v20+ to run.
 
 For this project, I recommend using [PNPM](https://pnpm.io/installation) instead of NPM to install the dependencies. PNPM offers several advantages, including:
 - Speed: PNPM is significantly faster than NPM, especially when installing projects with many dependencies.
