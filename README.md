@@ -91,6 +91,7 @@ A Reducer has been configured using `useContext` and `useReducer` to store langu
 Chronos requires [Node.js](https://nodejs.org/) v20+ to run.
 
 For this project, I recommend using [PNPM](https://pnpm.io/installation) instead of NPM to install the dependencies. PNPM offers several advantages, including:
+
 - Speed: PNPM is significantly faster than NPM, especially when installing projects with many dependencies.
 - Space efficiency: PNPM stores dependencies efficiently, using a hashed tree file system and avoiding duplicate files.
 - Integrity: PNPM checks the integrity of dependencies to ensure that they are not corrupted or altered.
@@ -110,6 +111,10 @@ $ cd [project-name]
 # Install dependencies
 $ pnpm i
 ```
+
+## Enviroment config
+
+> Clone `.env.template` file and rename copy to `.env`; and fill in the variables.
 
 This command will download and install all the dependencies listed in your project's `package.json` file.
 
@@ -137,6 +142,8 @@ dependencies: {
    "react-i18next",
    "i18next-http-backend",
    "styled-components",
+   "@azure/msal-browser",
+   "@azure/msal-react",
 },
 devDependencies: {
   "vitest",
