@@ -1,6 +1,7 @@
 // ==> Contexts
 import { MsalProvider } from "@azure/msal-react";
-import { ConfigProvider } from "@utils/providers/ConfigProvider";
+import { ConfigProvider } from "@providers/ConfigProvider";
+import { SessionProvider } from "@providers/SessionProvider";
 
 // Azure confguration
 import { PublicClientApplication } from "@azure/msal-browser";
@@ -15,8 +16,10 @@ interface MainProviderProps {
 export const MainProvider = ({ children }: MainProviderProps) => (
   <MsalProvider instance={msalInstance}>
     <ConfigProvider>
-      {/* Add others providers */}
-      {children}
+      <SessionProvider>
+        {/* Add others providers */}
+        {children}
+      </SessionProvider>
     </ConfigProvider>
   </MsalProvider>
 );
