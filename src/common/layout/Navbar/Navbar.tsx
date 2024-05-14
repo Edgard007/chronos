@@ -1,19 +1,51 @@
 import { useTranslation } from "react-i18next";
-
+import { useMsal } from "@azure/msal-react";
+import { butterup } from "butterup-toast";
 import styled from "styled-components";
 
 // ==> Context
 import useConfigContext from "@utils/contexts/useConfigContext";
+import useSessionContext from "@contexts/useSessionContext";
 
 // ==> Components
 import SwitchMode from "../components/SwitchMode";
 import MenuLng from "../components/MenuLng";
 
+// ==> Assets
+import { PowerIcon } from "@common/assets/CustomIcons";
+
 const Logger = () => {
+  const { instance } = useMsal();
   const { t } = useTranslation();
 
   // ==> Use context
   const { state, setLng, setMode } = useConfigContext();
+  const { dispatch } = useSessionContext();
+
+  const handleLogout = async () => {
+    await instance
+      .logoutPopup()
+      .then(() => {
+        dispatch({ type: "LOGOUT" });
+
+        butterup.toast({
+          title: "Logout",
+          message: "Logout successful",
+          type: "success",
+          location: "bottom-right",
+        });
+      })
+      .catch((err) => {
+        console.error("Failed Logout", err);
+
+        butterup.toast({
+          title: "Logout",
+          message: "Failed Logout, try again later",
+          type: "error",
+          location: "bottom-right",
+        });
+      });
+  };
 
   return (
     <Wrapper>
@@ -24,6 +56,7 @@ const Logger = () => {
         <section className="header__opts">
           <MenuLng lng={state?.lng} setLng={(lng) => setLng(lng)} />
           <SwitchMode mode={state?.mode} changeMode={(mode) => setMode(mode)} />
+          <PowerIcon onClick={() => handleLogout()} />
         </section>
       </header>
     </Wrapper>
@@ -68,7 +101,14 @@ const Wrapper = styled.nav`
         font-size: var(--font-md);
         font-family: var(--primary-font);
         font-weight: var(--bold-weight);
-        color: var(--color-blue);
+        color: var(--color-secundary);
+
+        background: linear-gradient(90deg, var(--color-red), var(--color-secundary));
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: textclip 2s linear infinite;
       }
     }
 
@@ -88,12 +128,18 @@ const Wrapper = styled.nav`
     }
 
     svg {
-      height: 2.25rem;
+      height: 1.25rem;
       width: auto;
 
       :hover {
         cursor: pointer;
       }
+    }
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
     }
   }
 `;
