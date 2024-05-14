@@ -6,12 +6,14 @@ import Animations from "./Animations";
 // Customs styles
 import Input from "./custom/InputStyle";
 import Scroll from "./custom/ScrollStyle";
+import Butterup from "./custom/Butterup";
 
 export const GlobalStyles = createGlobalStyle`
   ${Variables};
   ${Animations};
   ${Input};
   ${Scroll};
+  ${Butterup};
 
   * {
       border: 0;
