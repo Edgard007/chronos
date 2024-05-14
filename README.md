@@ -112,11 +112,11 @@ $ cd [project-name]
 $ pnpm i
 ```
 
+This command will download and install all the dependencies listed in your project's `package.json` file.
+
 ## Enviroment config
 
 > Clone `.env.template` file and rename copy to `.env`; and fill in the variables.
-
-This command will download and install all the dependencies listed in your project's `package.json` file.
 
 ## Running app
 
@@ -136,16 +136,17 @@ $ pnpm test
 
 ```js
 dependencies: {
-   "react",
-   "react-dom",
-   "i18next",
-   "react-i18next",
-   "i18next-http-backend",
-   "styled-components",
-   "@azure/msal-browser",
-   "@azure/msal-react",
-   "butterup-toast",
-},
+    "react",
+    "react-dom",
+    "@azure/msal-browser",
+    "@azure/msal-react",
+    "butterup-toast",
+    "i18next",
+    "i18next-http-backend",
+    "react-i18next",
+    "react-router-dom",
+    "styled-components",
+  },
 devDependencies: {
   "vitest",
 }
