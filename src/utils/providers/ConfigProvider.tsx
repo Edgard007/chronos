@@ -1,23 +1,27 @@
 import { createContext, useReducer, useEffect } from "react";
 
-import i18n from "@config/i18n";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { ThemeProvider } from "styled-components";
+
+// Config
+import i18next from "@config/i18n";
+import { DEFAULT_LNG } from "@config/lng";
 
 // ==> Style config
 import { lightTheme, darkTheme } from "@common/styles/themes";
 import { GlobalStyles } from "@common/styles/GlobalStyles";
 
 // ==> Types
-import { ConfigAction, LngSite, ModeSite } from "@src/utils/types/config.type";
+import { ConfigAction, LngSite, ModeSite } from "@utils/types/config.type";
 
 // ==> Interfaces
-import { IConfigReducer } from "@src/utils/interfaces/config.interface";
+import { IConfigReducer } from "@interfaces/config.interface";
 
 // ==> Reducers
 import sessionReducer, {
   initialState as initStateReducer,
-} from "@src/utils/reducers/config.reducer";
+  STORAGE_KEY,
+} from "@reducers/config.reducer";
 
 interface ConfigProviderProps {
   children: JSX.Element | JSX.Element[];
@@ -37,6 +41,7 @@ export const ConfigContext = createContext<ConfigContextType>(
 export const ConfigProvider = ({ children }: ConfigProviderProps) => {
   // ==>
   const {
+    t,
     i18n: { changeLanguage },
   } = useTranslation();
 
@@ -48,7 +53,7 @@ export const ConfigProvider = ({ children }: ConfigProviderProps) => {
   }, []);
 
   window.addEventListener("storage", (ev) => {
-    if (ev.key === "CONFIG") {
+    if (ev.key === STORAGE_KEY) {
       restoreState();
     }
   });
@@ -57,24 +62,21 @@ export const ConfigProvider = ({ children }: ConfigProviderProps) => {
     const isDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    const lng = window.navigator.language.split("-")[0];
 
     const body: IConfigReducer = {
       mode: isDarkMode ? "dark" : "light",
-      lng: lng === "es" ? "es" : "en",
+      lng: DEFAULT_LNG,
     };
     dispatch({
       type: "DEFAULT",
       payload: body,
     });
-
-    changeLanguage(body?.lng);
-    document.title = i18n.t("app_name");
+    saveLng(body.lng);
   };
 
   const restoreState = () => {
     // ==> Restore info
-    const config = localStorage.getItem("CONFIG");
+    const config = localStorage.getItem(STORAGE_KEY);
 
     if (config) {
       // ==> Restore sesion
@@ -83,9 +85,7 @@ export const ConfigProvider = ({ children }: ConfigProviderProps) => {
         type: "RESTORE",
         payload: body,
       });
-
-      changeLanguage(body?.lng);
-      document.title = i18n.t("app_name");
+      saveLng(body.lng);
     } else getDeviceConfig();
   };
 
@@ -105,13 +105,33 @@ export const ConfigProvider = ({ children }: ConfigProviderProps) => {
         lng: lng,
       },
     });
+    saveLng(lng);
+  };
+
+  const saveLng = (lng: LngSite) => {
+    if (state?.lng === lng) return;
 
     changeLanguage(lng);
-    document.title = i18n.t("app_name");
+    // Change title
+    document.title = t("app_name");
+
+    // Chage lang in html
+    document.documentElement.lang = lng;
+
+    // Change description
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute("content", t("app_description"));
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = t("app_description");
+      document.head.appendChild(meta);
+    }
   };
 
   return (
-    <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18next}>
       <ConfigContext.Provider
         value={{
           state: state,

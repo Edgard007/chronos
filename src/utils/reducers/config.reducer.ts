@@ -1,13 +1,16 @@
 // ==> Types
-import { ConfigAction } from "@src/utils/types/config.type";
+import { ConfigAction } from "@utils/types/config.type";
 
 // ==> Interfaces
-import { IConfigReducer } from "@src/utils/interfaces/config.interface";
+import { IConfigReducer } from "@interfaces/config.interface";
 
 const initialState: IConfigReducer = {
   lng: "es",
   mode: "light",
 };
+
+// Storage key
+const STORAGE_KEY = "CONFIG";
 
 const sessionReducer = (
   state: IConfigReducer = initialState,
@@ -22,7 +25,7 @@ const sessionReducer = (
         mode: action?.payload?.mode,
       };
 
-      localStorage.setItem("CONFIG", JSON.stringify(body));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(body));
       return body;
 
     case "SET_LNG":
@@ -31,7 +34,7 @@ const sessionReducer = (
         lng: action?.payload?.lng,
       };
 
-      localStorage.setItem("CONFIG", JSON.stringify(body));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(body));
       return body;
 
     case "RESTORE":
@@ -41,7 +44,7 @@ const sessionReducer = (
         mode: action?.payload?.mode,
       };
 
-      localStorage.setItem("CONFIG", JSON.stringify(body));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(body));
       return body;
 
     case "RESET":
@@ -49,7 +52,7 @@ const sessionReducer = (
         ...initialState,
       };
 
-      localStorage.setItem("CONFIG", JSON.stringify(body));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(body));
       return body;
 
     case "DEFAULT":
@@ -59,7 +62,7 @@ const sessionReducer = (
         mode: action?.payload?.mode,
       };
 
-      localStorage.setItem("CONFIG", JSON.stringify(body));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(body));
       return body;
 
     default:
@@ -67,5 +70,5 @@ const sessionReducer = (
   }
 };
 
-export { initialState };
+export { STORAGE_KEY, initialState };
 export default sessionReducer;
