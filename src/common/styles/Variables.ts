@@ -23,11 +23,11 @@ const Variables = css<{ theme?: DefaultTheme }>`
     --font-sec: 0.625rem;
     --font-ter: 0.5rem;
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       --font-bg: 3rem;
       --font-md: 1rem;
       --font-sm: 0.75rem;
-    }
+    } */
 
     // -> Color
 
@@ -64,7 +64,7 @@ const Variables = css<{ theme?: DefaultTheme }>`
     // Specific colors (More colors)
     --color-gray: #dddddd;
     --color-secundary-gray: #898989;
-    --color-red: #f11434;
+    --color-red: #e90000;
 
     --color-yellow: #f6c90e;
     --color-orange: #ff7a3c;

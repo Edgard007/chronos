@@ -16,11 +16,11 @@ export const GlobalStyles = createGlobalStyle`
   ${Butterup};
 
   * {
-      border: 0;
-      box-sizing: border-box;
-      margin: 0px;
-      padding: 0px;
-      font-family: var(--secundary-font);
+    border: 0;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--secundary-font);
   }
 
   body {
