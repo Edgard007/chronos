@@ -11,5 +11,11 @@
   "theme_light": "Light",
   "theme_dark": "Dark",
 
-  "copyright-label": "©{{year}} - {{app_name}}. All rights reserved."
+  "copyright-label": "©{{year}} - {{app_name}}. All rights reserved.",
+
+  "learn-page": {
+    "title": "Piensen, planifiquen, organicen y actúen",
+    "descrip": "Conozca Chronos, una aplicación que le ayudará a organizar su tiempo y tareas de manera eficiente.",
+    "btn": "Comenzar"
+  }
 }
