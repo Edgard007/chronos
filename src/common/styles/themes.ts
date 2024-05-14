@@ -15,10 +15,9 @@ const colors = {
   black3: "#161B22",
 
   blue: "#2b78f0",
-  lightBlue: "#2b78f0",
-
   green: "#238636",
-  limeGreen: "#00C853",
+  red: "#e90000",
+  orange: "#ff7a3c",
 };
 
 export const lightTheme: DefaultTheme = {
@@ -42,10 +41,15 @@ export const lightTheme: DefaultTheme = {
 
   blue: colors?.blue,
   blueRgb: getRgbByHex(colors?.blue),
-  lightBlue: colors?.lightBlue,
 
   green: colors?.green,
-  limeGreen: colors?.limeGreen,
+  grenRgb: getRgbByHex(colors?.green),
+
+  red: colors?.red,
+  redRgb: getRgbByHex(colors?.red),
+
+  orange: colors?.orange,
+  orangeRgb: getRgbByHex(colors?.orange),
 
   filterToDark: "invert(1) grayscale(100%) brightness(200%)",
   filterToLight: "none",
@@ -72,10 +76,15 @@ export const darkTheme: DefaultTheme = {
 
   blue: colors?.blue,
   blueRgb: getRgbByHex(colors?.blue),
-  lightBlue: colors?.lightBlue,
 
   green: colors?.green,
-  limeGreen: colors?.limeGreen,
+  grenRgb: getRgbByHex(colors?.green),
+
+  red: colors?.red,
+  redRgb: getRgbByHex(colors?.red),
+
+  orange: colors?.orange,
+  orangeRgb: getRgbByHex(colors?.orange),
 
   filterToDark: "none",
   filterToLight: "invert(1) grayscale(100%) brightness(200%)",

@@ -19,11 +19,16 @@ export interface DefaultTheme {
 
   blue: string;
   blueRgb: string;
-  lightBlue?: string;
 
   green: string;
-  limeGreen?: string;
+  grenRgb: string;
 
   filterToDark: string;
   filterToLight: string;
+
+  red: string;
+  redRgb: string;
+
+  orange: string;
+  orangeRgb: string;
 }

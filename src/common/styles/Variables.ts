@@ -44,10 +44,9 @@ const Variables = css<{ theme?: DefaultTheme }>`
 
     --color-blue: ${({ theme }) => theme.blue};
     --color-blue-rgb: ${({ theme }) => theme.blueRgb};
-    --color-lightBlue: ${({ theme }) => theme.lightBlue};
 
     --color-green: ${({ theme }) => theme.green};
-    --color-limeGreen: ${({ theme }) => theme.limeGreen};
+    --color-green-rgb: ${({ theme }) => theme.grenRgb};
 
     // Statics
     --color-light: ${({ theme }) => theme.light};
@@ -64,10 +63,13 @@ const Variables = css<{ theme?: DefaultTheme }>`
     // Specific colors (More colors)
     --color-gray: #dddddd;
     --color-secundary-gray: #898989;
-    --color-red: #e90000;
+    --color-red: ${({ theme }) => theme.red};
+    --color-red-rgb: ${({ theme }) => theme.redRgb};
 
     --color-yellow: #f6c90e;
-    --color-orange: #ff7a3c;
+    --color-orange: ${({ theme }) => theme.orange};
+    --color-orange-rgb: ${({ theme }) => theme.orangeRgb};
+    
     --color-skyblue: #77b5fe;
 
     // -> Gradient
