@@ -144,6 +144,7 @@ dependencies: {
    "styled-components",
    "@azure/msal-browser",
    "@azure/msal-react",
+   "butterup-toast",
 },
 devDependencies: {
   "vitest",
