@@ -29,8 +29,8 @@ const Logger = () => {
         dispatch({ type: "LOGOUT" });
 
         butterup.toast({
-          title: "Logout",
-          message: "Logout successful",
+          title: t("logout.title") ?? "",
+          message: t("logout.success") ?? "",
           type: "success",
           location: "bottom-right",
         });
@@ -39,8 +39,8 @@ const Logger = () => {
         console.error("Failed Logout", err);
 
         butterup.toast({
-          title: "Logout",
-          message: "Failed Logout, try again later",
+          title: t("logout.title") ?? "",
+          message: t("logout.error") ?? "",
           type: "error",
           location: "bottom-right",
         });
