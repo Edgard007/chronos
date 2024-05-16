@@ -43,8 +43,8 @@ const SignIn = () => {
       });
 
       butterup.toast({
-        title: "Sign In",
-        message: "Sign In successful",
+        title: t("sign-in.title") ?? "",
+        message: t("sign-in.success") ?? "",
         type: "success",
         location: "bottom-right",
       });
@@ -52,8 +52,8 @@ const SignIn = () => {
       console.error("Failed SignIn", err);
 
       butterup.toast({
-        title: "Sign In",
-        message: "Failed Sign In, try again later",
+        title: t("sign-in.title") ?? "",
+        message: t("sign-in.error") ?? "",
         type: "error",
         location: "bottom-right",
       });
