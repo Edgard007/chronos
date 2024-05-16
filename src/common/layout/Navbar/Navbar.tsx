@@ -103,7 +103,11 @@ const Wrapper = styled.nav`
         font-weight: var(--bold-weight);
         color: var(--color-secundary);
 
-        background: linear-gradient(90deg, var(--color-red), var(--color-secundary));
+        background: linear-gradient(
+          90deg,
+          var(--color-red),
+          var(--color-secundary)
+        );
         background-size: 200% auto;
         color: transparent;
         -webkit-background-clip: text;
@@ -113,7 +117,7 @@ const Wrapper = styled.nav`
     }
 
     .header__opts {
-      --w: 150px;
+      --w: 100px;
 
       width: auto;
       height: 100%;
@@ -122,13 +126,13 @@ const Wrapper = styled.nav`
       justify-content: center;
       align-items: center;
       flex-direction: row;
-      gap: 0.25rem;
+      gap: 0.5rem;
 
       background-color: transparent;
     }
 
     svg {
-      height: 1.25rem;
+      height: 1.5rem;
       width: auto;
 
       :hover {
