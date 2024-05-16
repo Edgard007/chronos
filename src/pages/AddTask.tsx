@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { butterup } from "butterup-toast";
 
 // Components
 import Input from "@components/Input";
 import Select from "@components/Select";
+import Button from "@components/Button";
 
 interface Project {
   id: string;
@@ -64,8 +66,24 @@ const AddTask = () => {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!client || !project || !task) {
+      butterup.toast({
+        title: t("title") ?? "",
+        message: t("error") ?? "",
+        type: "error",
+        location: "bottom-right",
+      });
+      return;
+    }
+
+    console.log({ client, project, task });
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={handleSubmit}>
       <Select
         label={t("client")}
         placeholder={t("client-placeholder") ?? ""}
@@ -93,6 +111,7 @@ const AddTask = () => {
         placeholder={t("task-placeholder") ?? ""}
         width="88%"
       />
+      <Button text={t("btn")} type="submit" width="6rem" />
     </Wrapper>
   );
 };
