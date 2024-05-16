@@ -14,9 +14,19 @@
   "copyright-label": "©{{year}} - {{app_name}}. All rights reserved.",
 
   "learn-page": {
-    "title": "Piensen, planifiquen, organicen y actúen",
-    "descrip": "Conozca Chronos, una aplicación que le ayudará a organizar su tiempo y tareas de manera eficiente.",
-    "btn": "Comenzar"
+    "title": "Think, plan, organise and act",
+    "descrip": "Meet Chronos, an application that will help you organise your time and tasks efficiently.",
+    "btn": "Go to"
+  },
+  "sign-in": {
+    "title": "Sign In",
+    "error": "Failed Sign In, try again later",
+    "success": "Sign In successful"
+  },
+  "logout": {
+    "title": "Sign Out",
+    "error": "Failed Sign Out, try again later",
+    "success": "Sign Out successful"
   },
   "home": {
     "title": "Welcome {{name}}"
@@ -27,6 +37,8 @@
     "project": "Project",
     "project-placeholder": "Select a project",
     "task": "Task",
-    "task-placeholder": "Enter a task"
+    "task-placeholder": "Enter a task",
+    "btn": "Add task",
+    "error": "Please fill in all fields"
   }
 }

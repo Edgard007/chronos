@@ -18,15 +18,28 @@
     "descrip": "Conozca Chronos, una aplicación que le ayudará a organizar su tiempo y tareas de manera eficiente.",
     "btn": "Comenzar"
   },
+  "sign-in": {
+    "title": "Iniciar sesión",
+    "error": "Error al iniciar sesión",
+    "success": "Inicio de sesión exitoso"
+  },
+  "logout": {
+    "title": "Cerrar sesión",
+    "error": "Error al cerrar sesión",
+    "success": "Sesión cerrada exitosamente"
+  },
   "home": {
     "title": "Bienvenido {{name}}"
   },
   "add-task": {
+    "title": "Agregar tarea",
     "client": "Cliente",
     "client-placeholder": "Seleccione el cliente",
     "project": "Proyecto",
     "project-placeholder": "Selecccione el proyecto",
     "task": "Tarea",
-    "task-placeholder": "Describa la tarea"
+    "task-placeholder": "Describa la tarea",
+    "btn": "Agregar",
+    "error": "Todos los campos son obligatorios"
   }
 }
