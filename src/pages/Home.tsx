@@ -19,12 +19,17 @@ const Home = () => {
 
   const [showAdd, setShowAdd] = useState(false);
 
+  const handleAdd = () => {
+    setShowAdd((prev) => !prev);
+  };
+
   return (
     <Wrapper>
       <div className="h_header">
         <h2>{t("title", { name: stateSession?.user?.name ?? "" })}</h2>
         <AddIcon onClick={() => setShowAdd((prev) => !prev)} />
       </div>
+      {/* TODO: Add this action to Modal */}
       {showAdd && <AddTask />}
     </Wrapper>
   );
@@ -37,7 +42,6 @@ const Wrapper = styled.section`
   justify-content: center;
   min-height: 100%;
   gap: 1rem;
-  padding: 1rem;
 
   .h_header {
     display: flex;
