@@ -17,5 +17,8 @@
     "title": "Piensen, planifiquen, organicen y actúen",
     "descrip": "Conozca Chronos, una aplicación que le ayudará a organizar su tiempo y tareas de manera eficiente.",
     "btn": "Comenzar"
+  },
+  "home": {
+    "title": "Welcome {{name}}"
   }
 }
