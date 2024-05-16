@@ -20,5 +20,13 @@
   },
   "home": {
     "title": "Bienvenido {{name}}"
+  },
+  "add-task": {
+    "client": "Cliente",
+    "client-placeholder": "Seleccione el cliente",
+    "project": "Proyecto",
+    "project-placeholder": "Selecccione el proyecto",
+    "task": "Tarea",
+    "task-placeholder": "Describa la tarea"
   }
 }
